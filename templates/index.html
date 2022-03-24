@@ -13,7 +13,9 @@
         {% for book in all_books %}
         <li>
 {#            In jinja, you can use dict_item.key to get the value of the dictionary items.#}
+            <a href="{{ url_for('delete', book_id=book.id) }}">Delete</a>
             {{ book.title }} - {{ book.author }} - {{ book.rating }}/10
+            <a href="{{ url_for('edit', book_id=book.id) }}">Edit Rating</a>
         </li>
         {% endfor %}
     </ul>
